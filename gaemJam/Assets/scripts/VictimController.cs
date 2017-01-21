@@ -90,6 +90,7 @@ public class VictimController : MonoBehaviour {
 				VictimKilled ();
 			}
 		}
+		Destroy (other.gameObject);
 	}
 
 
