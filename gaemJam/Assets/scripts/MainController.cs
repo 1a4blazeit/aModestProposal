@@ -23,4 +23,10 @@ public class MainController : MonoBehaviour {
         Instantiate(to_clone, new Vector3(0, 5, 0), Quaternion.identity);
 
     }
+
+    public void TerminateGameObject(UnityEngine.Object to_terminate)
+    {
+        Destroy(to_terminate);
+        print("i did it!\n");
+    }
 }
