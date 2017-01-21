@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class AttackerController : MonoBehaviour {
 
-	public Rigidbody bullet;
+    public Transform bullet;
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update () {
 		if (Input.GetButtonDown("Shoot"))
 		{
 			FireBullet ();
@@ -15,7 +15,7 @@ public class AttackerController : MonoBehaviour {
 	}
 
 	void FireBullet(){
-		//TODO: Call InstantiateGameObject(bullet) from the MainController
-		Debug.Log("Calling InstantiateGameObject(bullet) from the MainController");
+
+        GameObject.Find("MainModel").GetComponent<MainController>().InstantiateGameObject(bullet);
 	}
 }

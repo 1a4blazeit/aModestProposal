@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour {
 
+	private static float Y_DIRECTION = -1f;
 	private static float BASE_SPEED = 0.05f;
-	private static float Y_DIRECTION = 1f;
+
 	private float speed;
 	private Vector3 move;
 
@@ -17,8 +18,9 @@ public class ProjectileController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		speed = BASE_SPEED;
-		move = new Vector3(0, Y_DIRECTION, 0);
-	}
+        move = new Vector3(0, Y_DIRECTION, 0);
+    }
+
 	
 	// FixedUpdate is called once per physics
 	void FixedUpdate () {
