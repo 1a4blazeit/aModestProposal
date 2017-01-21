@@ -6,7 +6,7 @@ using UnityEngine;
 
 
 
-public class squareController : MonoBehaviour {
+public class VictimController : MonoBehaviour {
 
     public float speed;
     public Vector3 gravity;
@@ -18,10 +18,10 @@ public class squareController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
 
-        move = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+        move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0);
 
         transform.position += move * speed;
 
@@ -31,11 +31,6 @@ public class squareController : MonoBehaviour {
         if (transform.position.x < -7)
             transform.position = new Vector3(-7, transform.position.y, 0);
 
-
-    }
-
-    void FixedUpdate()
-    {
 
     }
 }
