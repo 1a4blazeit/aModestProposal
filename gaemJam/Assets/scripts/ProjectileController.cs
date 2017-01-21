@@ -25,13 +25,16 @@ public class ProjectileController : MonoBehaviour {
 	// FixedUpdate is called once per physics
 	void FixedUpdate () {
         transform.position += move * speed;
-
-        if (transform.position.y < -5)
-            TerminationRequest();
 	}
 
     void TerminationRequest()
     {
         GameObject.Find("MainModel").GetComponent<MainController>().TerminateGameObject(this.gameObject);
     }
+	
+	void OnCollisionEnter2D (Collision2D other) {
+		if (other.collider.tag == "Wall") {
+			TerminationRequest();
+		}
+	}
 }
