@@ -16,7 +16,7 @@ public class boolitFly : MonoBehaviour {
         if (Input.GetKeyDown("space"))
         {
             print("space key was pressed");
-            transform.position = GameObject.Find("redSquare").transform.position;
+            transform.position = GameObject.Find("victim").transform.position;
         }
     }
 
