@@ -18,10 +18,12 @@ public class VictimController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
 
-        move = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+        move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0);
+
+        print (move.x);
 
         transform.position += move * speed;
 
@@ -31,11 +33,6 @@ public class VictimController : MonoBehaviour {
         if (transform.position.x < -7)
             transform.position = new Vector3(-7, transform.position.y, 0);
 
-
-    }
-
-    void FixedUpdate()
-    {
 
     }
 }
