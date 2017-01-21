@@ -35,6 +35,7 @@ public class ProjectileController : MonoBehaviour {
 	void OnCollisionEnter2D (Collision2D other) {
 		if (other.collider.tag == "Wall") {
 			TerminationRequest();
+			Debug.Log ("Projectile destroyed.");
 		}
 	}
 }

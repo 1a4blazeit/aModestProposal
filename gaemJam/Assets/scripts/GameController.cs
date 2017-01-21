@@ -7,13 +7,13 @@ public class GameController : MonoBehaviour {
 
     string writeText;
     int count;
-    public Text interText;
+    //public Text interText;
 
 	// Use this for initialization
 	void Start () {
         writeText = "shots fired: " + 0;
         count = 0;
-        GetComponent<Text>().text = writeText;
+        //GetComponent<Text>().text = writeText;
 	}
 	
 	// Update is called once per frame

@@ -1,14 +1,14 @@
 fileFormatVersion: 2
 guid: eb07d1737a0c27b40b00baa2bded6771
-timeCreated: 1484982653
+timeCreated: 1484988634
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
-  - projectile: {fileID: 1885193357894786, guid: 1117c3eea6bab46c09c4d257bfcc2a1f,
+  - projectile: {fileID: 1847685404828294, guid: e5538dd17d26a4ba6b8e22bc9bb7194a,
       type: 2}
-  - powerup: {fileID: 1870589196378172, guid: 5e239976b6ec14d08aae96e1e0f7d13b, type: 2}
-  - bullet: {fileID: 1847685404828294, guid: e5538dd17d26a4ba6b8e22bc9bb7194a, type: 2}
+  - powerup: {fileID: 1665474714850908, guid: ac5d77dfdeac84fccbb24adb52a0dd0b, type: 2}
+  - bullet: {fileID: 1467762833288656, guid: 3c1ca41cebe2a454db41940cf7f32c56, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
