@@ -21,8 +21,10 @@ public class squareController : MonoBehaviour {
 	void Update () {
 
 
-        move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-        transform.position += move * speed;
+        move = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+
+        if ((transform.position + move * speed).x < 7 && (transform.position + move * speed).x > -7)
+            transform.position += move * speed;
 
 
 
