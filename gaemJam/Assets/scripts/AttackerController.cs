@@ -10,12 +10,23 @@ public class AttackerController : MonoBehaviour {
     void Update () {
 		if (Input.GetButtonDown("Shoot"))
 		{
-			FireBullet ();
+			FireBullet ("shooter3");
 		}
-	}
 
-	void FireBullet(){
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            FireBullet("shooter1");
+        }
 
-        GameObject.Find("MainModel").GetComponent<MainController>().InstantiateGameObject(bullet);
+        if(Input.GetKeyDown(KeyCode.RightControl))
+        {
+            FireBullet("shooter2");
+        }
+
+    }
+
+	void FireBullet(string gunner){
+
+        GameObject.Find("MainModel").GetComponent<MainController>().InstantiateGameObject(bullet, gunner);
 	}
 }

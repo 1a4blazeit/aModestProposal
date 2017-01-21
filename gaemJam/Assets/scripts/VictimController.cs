@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-#pragma strict
-
-
 public class VictimController : MonoBehaviour {
 
     private float speed;
