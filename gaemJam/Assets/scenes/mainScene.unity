@@ -280,7 +280,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &422962626
 GameObject:
@@ -292,6 +292,8 @@ GameObject:
   - component: {fileID: 422962628}
   - component: {fileID: 422962627}
   - component: {fileID: 422962629}
+  - component: {fileID: 422962631}
+  - component: {fileID: 422962630}
   m_Layer: 0
   m_Name: Victim
   m_TagString: Untagged
@@ -359,6 +361,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: {x: 0, y: 0, z: 0}
+--- !u!50 &422962630
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 422962626}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &422962631
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 422962626}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2}
 --- !u!1 &668447404
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,9 +522,7 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-
   m_RootOrder: 9
-
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &958491171
 BoxCollider2D:
@@ -566,9 +600,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-
   m_RootOrder: 7
-
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1418277782
 GameObject:
@@ -632,9 +664,7 @@ Transform:
   m_LocalScale: {x: 0.33702698, y: 0.33871546, z: 0.20385732}
   m_Children: []
   m_Father: {fileID: 0}
-
   m_RootOrder: 10
-
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1505308723
 GameObject:
@@ -698,9 +728,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-
   m_RootOrder: 8
-
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1758880568
 GameObject:
@@ -730,11 +758,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerupFrequency: 0.2
-
   projectile: {fileID: 1847685404828294, guid: e5538dd17d26a4ba6b8e22bc9bb7194a, type: 2}
   powerup: {fileID: 1665474714850908, guid: ac5d77dfdeac84fccbb24adb52a0dd0b, type: 2}
   bullet: {fileID: 1467762833288656, guid: 3c1ca41cebe2a454db41940cf7f32c56, type: 2}
-
 --- !u!4 &1758880570
 Transform:
   m_ObjectHideFlags: 0
@@ -962,7 +988,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -980,4 +1006,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161b37c8b7bc2ed46ac2f3ed7d5e4875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interText: {fileID: 0}
