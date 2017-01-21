@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50787499769682976}
   m_Layer: 0
   m_Name: speedboost
-  m_TagString: Powerup
+  m_TagString: SpeedBoost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

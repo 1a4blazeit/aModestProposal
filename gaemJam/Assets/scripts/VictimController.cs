@@ -5,11 +5,15 @@ using UnityEngine;
 public class VictimController : MonoBehaviour {
 
     private float speed;
+	private bool shieldEnabled;
+
     public Vector3 move;
+
 
 	// Use this for initialization
 	private void Start () {
-        speed = 0.5f;
+        speed = 0.2f;
+		shieldEnabled = false;
 	}
 	
 	// Update is called once per frame
@@ -45,13 +49,30 @@ public class VictimController : MonoBehaviour {
     }
 
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.CompareTag("Powerup")){
-			Debug.Log("Powerup enabled!");
+		if (other.CompareTag("Shield")){
+			Debug.Log("Shield enabled!");
+			shieldEnabled = true;
+		}
+		if (other.CompareTag("SpeedBoost")){
+			Debug.Log("Speed Boost enabled!");
 		}
 		if (other.tag == "Bullet")
 		{
 			Debug.Log("HIT");
-			VictimKilled();
+			if (shieldEnabled) {
+				Debug.Log ("Victim didn't die because of shield!");
+				shieldEnabled = false;
+			} else {
+				VictimKilled ();
+			}
 		}
+	}
+
+	void enableSpeedBoost(){
+
+	}
+
+	void disableSpeedBoost(){
+
 	}
 }
