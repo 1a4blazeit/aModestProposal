@@ -44,12 +44,14 @@ public class VictimController : MonoBehaviour {
         GameObject.Find("MainModel").GetComponent<MainController>().VictimKilledEnd();
     }
 
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.collider.tag == "Bullet")
-        {
-            Debug.Log("HIT");
-            VictimKilled();
-        }
-    }
+	void OnTriggerEnter2D(Collider2D other){
+		if (other.CompareTag("Powerup")){
+			Debug.Log("Powerup enabled!");
+		}
+		if (other.tag == "Bullet")
+		{
+			Debug.Log("HIT");
+			VictimKilled();
+		}
+	}
 }
