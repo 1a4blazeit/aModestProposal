@@ -4,27 +4,37 @@ using UnityEngine;
 
 public class AttackerController : MonoBehaviour {
 
+	public GameObject cannon1;
+	public GameObject cannon2;
+	public GameObject cannon3;
+	public GameObject cannon4;
+
     // Update is called once per frame
     void Update () {
-		if (Input.GetButtonDown("Shoot"))
+		if (Input.GetButtonDown("Fire1"))
 		{
-			FireBullet ("shooter3");
+			FireBullet (cannon1);
 		}
 
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+		if (Input.GetButtonDown("Fire2"))
         {
-            FireBullet("shooter1");
+            FireBullet(cannon2);
         }
 
-        if(Input.GetKeyDown(KeyCode.RightControl))
+		if (Input.GetButtonDown("Fire3"))
         {
-            FireBullet("shooter2");
+            FireBullet(cannon3);
         }
+
+		if (Input.GetButtonDown("Fire4"))
+		{
+			FireBullet(cannon4);
+		}
 
     }
 
-	void FireBullet(string gunner){
+	void FireBullet(GameObject gunner){
 
-        GameObject.Find("MainModel").GetComponent<MainController>().InstantiateProjectile(gunner);
+		GameObject.Find("MainModel").GetComponent<MainController>().InstantiateProjectile(gunner);
 	}
 }

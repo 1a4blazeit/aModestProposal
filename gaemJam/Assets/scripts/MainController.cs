@@ -7,19 +7,16 @@ public class MainController : MonoBehaviour {
 
 	public float powerupFrequency = 0.2f;
 
-	public GameObject projectile;
-	public GameObject powerup;
 	public GameObject bullet;
 	public GameObject speedboost;
 	public GameObject shield;
 
-    public void InstantiateProjectile(string gunner)
+    public void InstantiateProjectile(GameObject gunner)
     {
-		Vector3 gunLocation = GameObject.Find(gunner).transform.position;
+		Vector3 gunLocation = gunner.transform.position;
 
 		GameObject projectileType = determineProjectileType ();
-		GameObject projectileGO = Instantiate (projectile, gunLocation, Quaternion.identity);
-		Instantiate (projectileType, projectileGO.transform, false);
+		Instantiate (projectileType, gunLocation, Quaternion.identity);
 
         //GameObject.Find("GameModel/Text").GetComponent<GameController>().CountUp();
     }
