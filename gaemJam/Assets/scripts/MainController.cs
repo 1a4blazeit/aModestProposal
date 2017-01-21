@@ -33,7 +33,6 @@ public class MainController : MonoBehaviour {
     public void TerminateGameObject(UnityEngine.Object to_terminate)
     {
         Destroy(to_terminate);
-        print("i did it!\n");
     }
 		
 	private void determineProjectileType(){
