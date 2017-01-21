@@ -4,23 +4,19 @@ using UnityEngine;
 
 #pragma strict
 
-
-
 public class VictimController : MonoBehaviour {
 
-    public float speed;
-    public Vector3 gravity;
+    private float speed;
     public Vector3 move;
 
 	// Use this for initialization
-	void Start () {
+	private void Start () {
         speed = 0.5f;
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
-
-
+	private void FixedUpdate () {
+        
         move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0);
 
         transform.position += move * speed;
@@ -30,7 +26,18 @@ public class VictimController : MonoBehaviour {
 
         if (transform.position.x < -7)
             transform.position = new Vector3(-7, transform.position.y, 0);
+    }
 
-
+    public void speedMod (string changeTo)
+    {
+        if ( changeTo == "boost")
+        {
+            speed = 1.0f;
+        } else if ( changeTo == "reset"){
+            speed = 0.5f;
+        } else if ( changeTo == "slow")
+        {
+            speed = 0.2f;
+        }
     }
 }
