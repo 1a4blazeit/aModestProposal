@@ -17,7 +17,7 @@ public class MainController : MonoBehaviour {
 		GameObject projectileType = determineProjectileType ();
 		Instantiate(projectileType, gunLocation, Quaternion.identity);
 
-        GameObject.Find("GameModel/Text").GetComponent<GameController>().CountUp();
+        //GameObject.Find("GameModel/Text").GetComponent<GameController>().CountUp();
     }
 
     public void TerminateGameObject(UnityEngine.Object to_terminate)
@@ -35,5 +35,11 @@ public class MainController : MonoBehaviour {
 			return bullet;
 		}
 	}
+
+    public void VictimKilledEnd()
+    {
+        //TODO trigger the ending for when the Victim is killed
+        Debug.Log("VICTIM DIED");
+    }
 
 }
