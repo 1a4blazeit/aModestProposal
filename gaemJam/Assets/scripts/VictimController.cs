@@ -23,8 +23,6 @@ public class VictimController : MonoBehaviour {
 
         move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0);
 
-        print (move.x);
-
         transform.position += move * speed;
 
         if (transform.position.x > 7)
