@@ -761,6 +761,8 @@ MonoBehaviour:
   projectile: {fileID: 1847685404828294, guid: e5538dd17d26a4ba6b8e22bc9bb7194a, type: 2}
   powerup: {fileID: 1665474714850908, guid: ac5d77dfdeac84fccbb24adb52a0dd0b, type: 2}
   bullet: {fileID: 1467762833288656, guid: 3c1ca41cebe2a454db41940cf7f32c56, type: 2}
+  speedboost: {fileID: 1363015854162656, guid: 3a046adfaafba4d5e8b31f5eb1ac4e2d, type: 2}
+  shield: {fileID: 1194774609832268, guid: 9d63e8ad350f344d083b974d0d0c841f, type: 2}
 --- !u!4 &1758880570
 Transform:
   m_ObjectHideFlags: 0
