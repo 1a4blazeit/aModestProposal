@@ -5,7 +5,7 @@ using UnityEngine;
 public class ProjectileController : MonoBehaviour {
 
 	private static float BASE_SPEED = 0.5f;
-	private static float Y_DIRECTION = 1f;
+	private static float Y_DIRECTION = -1f;
 	private float speed;
 	private Vector3 move;
 
@@ -17,10 +17,11 @@ public class ProjectileController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		speed = BASE_SPEED;
-	}
+        move = new Vector3(0, Y_DIRECTION, 0);
+    }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         transform.position += move * speed;
 	}
 }
