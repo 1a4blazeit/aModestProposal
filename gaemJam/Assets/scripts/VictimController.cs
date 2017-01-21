@@ -30,6 +30,7 @@ public class VictimController : MonoBehaviour {
 
     // Use this for initialization
     private void Start () {
+		powerUpLength = 5f;
         speed = 0.1f;
 		shieldEnabled = false;
 	}
