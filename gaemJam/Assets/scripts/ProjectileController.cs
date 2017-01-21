@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour {
 
-	private static float BASE_SPEED = 0.5f;
 	private static float Y_DIRECTION = -1f;
+	private static float BASE_SPEED = 0.05f;
+
 	private float speed;
 	private Vector3 move;
 
 	public ProjectileController(float x) {
 		// Create bullet at x coordinate going upwards.
-		move = new Vector3(x, Y_DIRECTION, 0);
+		transform.position = new Vector3(x, 0, 0);
 	}
 
 	// Use this for initialization
@@ -19,8 +20,9 @@ public class ProjectileController : MonoBehaviour {
 		speed = BASE_SPEED;
         move = new Vector3(0, Y_DIRECTION, 0);
     }
+
 	
-	// Update is called once per frame
+	// FixedUpdate is called once per physics
 	void FixedUpdate () {
         transform.position += move * speed;
 	}
