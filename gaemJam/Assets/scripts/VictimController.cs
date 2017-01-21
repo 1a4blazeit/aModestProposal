@@ -7,7 +7,11 @@ public class VictimController : MonoBehaviour {
     private float speed;
 	private bool shieldEnabled;
 
+	public GameObject shield;
+
     public Vector3 move;
+
+	private GameObject shieldgo;
 
 
 	// Use this for initialization
@@ -51,7 +55,7 @@ public class VictimController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.CompareTag("Shield")){
 			Debug.Log("Shield enabled!");
-			shieldEnabled = true;
+			enableShield ();
 		}
 		if (other.CompareTag("SpeedBoost")){
 			Debug.Log("Speed Boost enabled!");
@@ -61,15 +65,26 @@ public class VictimController : MonoBehaviour {
 			Debug.Log("HIT");
 			if (shieldEnabled) {
 				Debug.Log ("Victim didn't die because of shield!");
-				shieldEnabled = false;
+				disableShield ();
 			} else {
 				VictimKilled ();
 			}
 		}
 	}
 
-	void enableSpeedBoost(){
+	void enableShield(){
+		shieldEnabled = true;
+		shieldgo = Instantiate (shield, gameObject.transform, false);
+		shieldgo.transform.localScale = new Vector3(4,4,1);
+	}
 
+	void disableShield(){
+		shieldEnabled = false;
+		Destroy (shieldgo);
+	}
+
+	void enableSpeedBoost(){
+		
 	}
 
 	void disableSpeedBoost(){
