@@ -6,7 +6,7 @@ using UnityEngine;
 
 
 
-public class squareController : MonoBehaviour {
+public class VictimController : MonoBehaviour {
 
     public float speed;
     public Vector3 gravity;
