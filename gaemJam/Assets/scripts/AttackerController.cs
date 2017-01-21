@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class AttackerController : MonoBehaviour {
 
-    public Transform bullet;
-
     // Update is called once per frame
     void Update () {
 		if (Input.GetButtonDown("Shoot"))
@@ -27,6 +25,6 @@ public class AttackerController : MonoBehaviour {
 
 	void FireBullet(string gunner){
 
-        GameObject.Find("MainModel").GetComponent<MainController>().InstantiateGameObject(bullet, gunner);
+        GameObject.Find("MainModel").GetComponent<MainController>().InstantiateProjectile(gunner);
 	}
 }

@@ -205,7 +205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a7d001812a844dcb107d85e7e7eecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4435182694163878, guid: 1117c3eea6bab46c09c4d257bfcc2a1f, type: 2}
 --- !u!4 &270887882
 Transform:
   m_ObjectHideFlags: 0
@@ -603,6 +602,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb07d1737a0c27b40b00baa2bded6771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerupFrequency: 0.2
+  powerup: {fileID: 1870589196378172, guid: 5e239976b6ec14d08aae96e1e0f7d13b, type: 2}
+  bullet: {fileID: 1847685404828294, guid: e5538dd17d26a4ba6b8e22bc9bb7194a, type: 2}
 --- !u!4 &1758880570
 Transform:
   m_ObjectHideFlags: 0

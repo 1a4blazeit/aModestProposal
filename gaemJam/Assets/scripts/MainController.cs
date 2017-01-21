@@ -7,41 +7,33 @@ public class MainController : MonoBehaviour {
 
 	public float powerupFrequency = 0.2f;
 
-	// Use this for initialization
-	void Start () {
+	public GameObject powerup;
+	public GameObject bullet;
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    public void InstantiateGameObject(UnityEngine.Object to_clone, string sourceName)
+    public void InstantiateProjectile(string gunner)
     {
-		//Determine whether the projectile is a bullet or a powerup
-		//TODO: Determine if the to_clone object is tagged with "bullet" before calling "determineProjectileType()"
-		determineProjectileType();
+		Vector3 gunLocation = GameObject.Find(gunner).transform.position;
 
-        Vector3 location = GameObject.Find(sourceName).transform.position;
+		GameObject projectileType = determineProjectileType ();
+		Instantiate(projectileType, gunLocation, Quaternion.identity);
 
-        Instantiate(to_clone, location, Quaternion.identity);
         GameObject.Find("GameModel/Text").GetComponent<GameController>().CountUp();
-
     }
 
     public void TerminateGameObject(UnityEngine.Object to_terminate)
     {
         Destroy(to_terminate);
-        print("i did it!\n");
     }
 		
-	private void determineProjectileType(){
+	private GameObject determineProjectileType(){
 		float number = UnityEngine.Random.value;
 		if (number <= powerupFrequency) {
 			Debug.Log ("A powerup is generated! " + number);
+			return powerup;
 		} else {
 			Debug.Log ("A bullet is generated! " + number);
+			return bullet;
 		}
 	}
+
 }
