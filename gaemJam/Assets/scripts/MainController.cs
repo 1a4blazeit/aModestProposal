@@ -16,11 +16,13 @@ public class MainController : MonoBehaviour {
 		
 	}
 
-    public void InstantiateGameObject(UnityEngine.Object to_clone)
+    public void InstantiateGameObject(UnityEngine.Object to_clone, string sourceName)
     {
 
-        //for now, instantiate the object at 0, 0, 0. in future, check what kind of object it is and spawn appropriately accordingly.
-        Instantiate(to_clone, new Vector3(0, 5, 0), Quaternion.identity);
+        Vector3 location = GameObject.Find(sourceName).transform.position;
+
+        Instantiate(to_clone, location, Quaternion.identity);
+        GameObject.Find("GameModel/Text").GetComponent<GameController>().CountUp();
 
     }
 

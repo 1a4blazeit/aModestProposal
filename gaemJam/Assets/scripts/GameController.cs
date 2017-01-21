@@ -18,11 +18,14 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButtonDown("Shoot"))
-        {
-            count++;
-            writeText = "shots fired: " + count;
-        }
+ 
+    }
+
+    public void CountUp()
+    {
+
+        count++;
+        writeText = "shots fired: " + count;
 
         GetComponent<Text>().text = writeText;
     }
