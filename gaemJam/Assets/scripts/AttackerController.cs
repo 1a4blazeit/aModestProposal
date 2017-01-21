@@ -8,7 +8,7 @@ public class AttackerController : MonoBehaviour {
 	void Update () {
 		if (Input.GetButtonDown("Shoot"))
 		{
-			Debug.Log("Shooting");
+			Debug.Log("Shooting!");
 		}
 	}
 }
