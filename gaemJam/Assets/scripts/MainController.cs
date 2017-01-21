@@ -7,6 +7,7 @@ public class MainController : MonoBehaviour {
 
 	public float powerupFrequency = 0.2f;
 
+	public GameObject projectile;
 	public GameObject powerup;
 	public GameObject bullet;
 
@@ -15,9 +16,10 @@ public class MainController : MonoBehaviour {
 		Vector3 gunLocation = GameObject.Find(gunner).transform.position;
 
 		GameObject projectileType = determineProjectileType ();
-		Instantiate(projectileType, gunLocation, Quaternion.identity);
+		GameObject projectileGO = Instantiate (projectile, gunLocation, Quaternion.identity);
+		Instantiate (projectileType, projectileGO.transform, false);
 
-        GameObject.Find("GameModel/Text").GetComponent<GameController>().CountUp();
+        //GameObject.Find("GameModel/Text").GetComponent<GameController>().CountUp();
     }
 
     public void TerminateGameObject(UnityEngine.Object to_terminate)
