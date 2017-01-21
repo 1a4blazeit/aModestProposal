@@ -38,4 +38,10 @@ public class MainController : MonoBehaviour {
 		}
 	}
 
+    public void VictimKilledEnd()
+    {
+        //TODO trigger the ending for when the Victim is killed
+        Debug.Log("VICTIM DIED");
+    }
+
 }

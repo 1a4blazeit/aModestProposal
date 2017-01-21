@@ -38,4 +38,18 @@ public class VictimController : MonoBehaviour {
             speed = 0.2f;
         }
     }
+
+    void VictimKilled()
+    {
+        GameObject.Find("MainModel").GetComponent<MainController>().VictimKilledEnd();
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.tag == "Bullet")
+        {
+            Debug.Log("HIT");
+            VictimKilled();
+        }
+    }
 }
