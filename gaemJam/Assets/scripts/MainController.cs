@@ -53,4 +53,10 @@ public class MainController : MonoBehaviour {
         //TODO trigger the ending for when the Victim is killed
         Debug.Log("VICTIM DIED");
     }
+
+    public bool VictimSpeedBoost()
+    {
+        //TODO add condition in which the powerup is already active so it returns false
+        return true;
+    }
 }

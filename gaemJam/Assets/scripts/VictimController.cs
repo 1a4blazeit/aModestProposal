@@ -11,12 +11,26 @@ public class VictimController : MonoBehaviour {
 
     public Vector3 move;
 
+
+    //Time based variables for powerups
+    public float powerUpLength;
+    private float powerUpEnd;
+
 	private GameObject shieldgo;
 
 
-	// Use this for initialization
-	private void Start () {
-        speed = 0.2f;
+
+    void Update()
+    {
+        if ( (powerUpEnd - Time.time) <= 0 )
+        {
+            speedMod("reset");
+        }
+    }
+
+    // Use this for initialization
+    private void Start () {
+        speed = 0.1f;
 		shieldEnabled = false;
 	}
 	
@@ -38,12 +52,12 @@ public class VictimController : MonoBehaviour {
     {
         if ( changeTo == "boost")
         {
-            speed = 1.0f;
+            speed = 0.3f;
         } else if ( changeTo == "reset"){
-            speed = 0.5f;
+            speed = 0.1f;
         } else if ( changeTo == "slow")
         {
-            speed = 0.2f;
+            speed = 0.05f;
         }
     }
 
@@ -59,7 +73,12 @@ public class VictimController : MonoBehaviour {
 		}
 		if (other.CompareTag("SpeedBoost")){
 			Debug.Log("Speed Boost enabled!");
-		}
+            if (GameObject.Find("MainModel").GetComponent<MainController>().VictimSpeedBoost())
+            {
+                speedMod("boost");
+                powerUpEnd = Time.time + powerUpLength;
+            }
+        }
 		if (other.tag == "Bullet")
 		{
 			Debug.Log("HIT");
@@ -72,6 +91,7 @@ public class VictimController : MonoBehaviour {
 		}
 	}
 
+
 	void enableShield(){
 		shieldEnabled = true;
 		shieldgo = Instantiate (shield, gameObject.transform, false);
@@ -83,11 +103,4 @@ public class VictimController : MonoBehaviour {
 		Destroy (shieldgo);
 	}
 
-	void enableSpeedBoost(){
-		
-	}
-
-	void disableSpeedBoost(){
-
-	}
 }
